@@ -25,6 +25,96 @@
             transition: background-color 0.2s ease;
         }
 
+        @media (max-width: 420px) {
+            #announcement-bar {
+                flex-wrap: wrap;
+                gap: 0.35rem;
+                justify-content: center;
+                text-align: center;
+                padding: 0.6rem 0.6rem;
+                font-size: 0.80rem;
+                line-height: 1.2;
+                transition: transform 0.25s ease, opacity 0.25s ease;
+            }
+
+            #announcement-bar.hide-announcement {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            #announcement-bar .badge {
+                margin-right: 6px;
+                padding: 1px 5px;
+                font-size: 9px;
+            }
+
+            #announcement-bar .bar-button {
+                margin-left: 0;
+                margin-top: 0.35rem;
+                padding: 0.35rem 0.7rem;
+                font-size: 0.75rem;
+            }
+
+            nav {
+                top: 4.75rem;
+                padding: 0.65rem 0.65rem;
+                transition: top 0.2s ease;
+            }
+
+            nav.announcement-hidden {
+                top: 0 !important;
+            }
+
+            .mobile-nav {
+                display: none;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.6rem;
+                background-color: rgba(255, 255, 255, 0.95);
+                border-top: 1px solid #e9e9e7;
+            }
+
+            .mobile-nav.open {
+                display: flex;
+            }
+
+            nav > .max-w-5xl {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.55rem;
+            }
+
+            nav > .max-w-5xl > div:first-child {
+                justify-content: space-between;
+            }
+
+            nav .hidden.md\:flex {
+                display: none !important;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border: 1px solid #e9e9e7;
+                border-radius: 8px;
+                background-color: white;
+                color: #37352f;
+            }
+
+            .nav-toggle svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            nav button.book-demo {
+                width: 100%;
+            }
+        }
+
         .notion-card:hover {
             background-color: #F2F3F4;
         }
@@ -136,6 +226,7 @@
 
     <!-- Announcement Bar -->
     <div
+        id="announcement-bar"
         class="fixed top-0 left-0 right-0 bg-black text-white text-center flex items-center justify-center py-4 z-40 text-sm font-medium">
         <span class="badge">NEW</span>
         <P>Operational AI Agents are here. Scale your workflow 10x.</P>
@@ -151,16 +242,28 @@
                 </div>
                 <span class="font-bold tracking-tight text-xl ml-6">Autoconvey</span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-[#787774]">
-                <a href="#about" class="hover:text-[#37352f]">About</a>
-                <a href="#how-it-works" class="hover:text-[#37352f]">Workflow</a>
-                <a href="#agents" class="hover:text-[#37352f]">Agents</a>
-                <a href="#pricing" class="hover:text-[#37352f]">Pricing</a>
-                <a href="business-automation-assessment.html" class="hover:text-[#37352f]">Assessment</a>
+            <div class="flex items-center gap-2">
+                <div class="hidden md:flex gap-8 text-sm font-medium text-[#787774]">
+                    <a href="#about" class="hover:text-[#37352f]">About</a>
+                    <a href="#how-it-works" class="hover:text-[#37352f]">Workflow</a>
+                    <a href="#agents" class="hover:text-[#37352f]">Agents</a>
+                    <a href="#pricing" class="hover:text-[#37352f]">Pricing</a>
+                    <a href="business-automation-assessment.html" class="hover:text-[#37352f]">Assessment</a>
+                </div>
+                <button id="nav-toggle" class="nav-toggle md:hidden" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle navigation">
+                    <span class="material-icons">menu</span>
+                </button>
             </div>
-            <button class="text-sm font-medium px-4 py-2 border border-[#e9e9e7] rounded-md hover:bg-[#f7f7f5] ">
+            <button class="text-sm font-medium px-4 py-2 border border-[#e9e9e7] rounded-md hover:bg-[#f7f7f5] book-demo">
                 <a href="business-automation-assessment.html">Book a Demo</a>
             </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav md:hidden" aria-hidden="true">
+            <a href="#about" class="text-sm font-medium text-[#37352f]">About</a>
+            <a href="#how-it-works" class="text-sm font-medium text-[#37352f]">Workflow</a>
+            <a href="#agents" class="text-sm font-medium text-[#37352f]">Agents</a>
+            <a href="#pricing" class="text-sm font-medium text-[#37352f]">Pricing</a>
+            <a href="business-automation-assessment.html" class="text-sm font-medium text-[#37352f]">Assessment</a>
         </div>
     </nav>
 
@@ -169,14 +272,14 @@
         <div class="inline-block px-3 py-1 mb-6 text-xs font-medium bg-[#f1f1ef] text-[#787774] rounded-full">
             The Future of Operational AI
         </div>
-        <h1 class=" gradient-text text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+        <h1 class=" gradient-text text-left text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
             We Build AI Agents That Work Inside Your Business
         </h1>
-        <p class="text-xl text-[#787774] mb-4 max-w-2xl">
+        <p class="text-xl text-left text-[#787774] mb-4 max-w-2xl">
             Autoconvey designs and manages AI agents that handle calls, qualify leads, automate workflows, and execute
             real operational tasks across your business.
         </p>
-        <p class="text-md text-[#a1a19f] mb-10 italic">
+        <p class="text-md text-left text-[#a1a19f] mb-10 italic">
             From voice agents to custom AI workers, we build systems that don’t just respond — they act.
         </p>
         <div class="flex flex-col md:flex-row gap-4 items-center">
@@ -895,8 +998,50 @@
                         behavior: 'smooth'
                     });
                 }
+                const mobileNav = document.getElementById('mobile-nav');
+                if (mobileNav && mobileNav.classList.contains('open')) {
+                    mobileNav.classList.remove('open');
+                    document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
+                }
             });
         });
+
+        const announcementBar = document.getElementById('announcement-bar');
+        const nav = document.querySelector('nav');
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        let lastScrollTop = 0;
+
+        function updateScrollBehavior() {
+            if (window.innerWidth > 420) {
+                announcementBar.classList.remove('hide-announcement');
+                nav.classList.remove('announcement-hidden');
+                return;
+            }
+
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 20) {
+                announcementBar.classList.add('hide-announcement');
+                nav.classList.add('announcement-hidden');
+            } else if (scrollTop < lastScrollTop) {
+                announcementBar.classList.remove('hide-announcement');
+                nav.classList.remove('announcement-hidden');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }
+
+        window.addEventListener('scroll', updateScrollBehavior);
+        window.addEventListener('resize', updateScrollBehavior);
+
+        if (navToggle && mobileNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mobileNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            });
+        }
     </script>
 </body>
 
