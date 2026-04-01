@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Automation Assessment | Autoconvey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: #37352f;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .notion-card {
+            border: 1px solid #e9e9e7;
+            transition: background-color 0.2s ease;
+        }
+
+        .notion-card:hover {
+            background-color: #f7f7f5;
+        }
+
+        .featured-card {
+            background-color: #f7f7f5;
+            border: 2px solid #37352f;
+        }
+
+        .btn-black {
+            background-color: #37352f;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .btn-black:hover {
+            opacity: 0.85;
+        }
+
+        .form-section {
+            margin-bottom: 80px;
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #e9e9e7;
+        }
+
+        .form-section h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #37352f;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-description {
+            color: #787774;
+            font-size: 1rem;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #37352f;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e9e9e7;
+            border-radius: 8px;
+            font-size: 15px;
+            background: white;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #37352f;
+            box-shadow: 0 0 0 3px rgba(55, 53, 47, 0.1);
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 12px 16px;
+            border: 2px solid #e9e9e7;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .radio-group label:hover,
+        .checkbox-group label:hover {
+            border-color: #37352f;
+            background: #f7f7f5;
+        }
+
+        .radio-group input[type="radio"],
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #37352f;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .checkbox-grid label {
+            padding: 10px 14px !important;
+            font-size: 0.9rem !important;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: #37352f;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #e9e9e7;
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #37352f;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .submit-section {
+            background: linear-gradient(135deg, #37352f 0%, #2a2721 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .submit-section h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .submit-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#e9e9e7] px-6 py-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="px-0 mx-0">
+                    <img src="Untitled design (31).png" alt="Autoconvey Logo" class="px-0 mx-0 w-[50px] py-2 pr-0 object-contain">
+                </div>
+                <span class="font-bold tracking-tight text-lg ml-6">AUTOCONVEY</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-[#787774]">
+                <a href="autoconveysld.html#about" class="hover:text-[#37352f]">About</a>
+                <a href="autoconveysld.html#how-it-works" class="hover:text-[#37352f]">Workflow</a>
+                <a href="autoconveysld.html#agents" class="hover:text-[#37352f]">Agents</a>
+                <a href="autoconveysld.html#pricing" class="hover:text-[#37352f]">Pricing</a>
+                <a href="business-automation-assessment.html" class="hover:text-[#37352f]">Assessment</a>
+           </div>
+            <button class="text-sm font-medium px-4 py-2 border border-[#e9e9e7] rounded-md hover:bg-[#f7f7f5] ">
+                <a href="business-automation-assessment.html">Book a Demo</a>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-6 max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 text-sm font-medium bg-[#f1f1ef] text-[#787774] rounded-full">
+            <span>📋</span>
+            Business Automation Assessment
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            Tell Us About Your Business
+        </h1>
+        <p class="text-xl text-[#787774] mb-8 max-w-2xl mx-auto">
+            Complete this assessment and we'll create a custom automation plan showing how AI agents can transform your operations.
+        </p>
+        <div class="flex items-center justify-center gap-8 text-sm text-[#a1a19f] mb-10">
+            <div class="flex items-center gap-2">
+                <span>⏱️</span>
+                <span>10-15 minutes</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span>📊</span>
+                <span>10 sections</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span>🎯</span>
+                <span>Custom plan</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Assessment Form -->
+    <main class="px-6 pb-20">
+        <form action="/submit-assessment" method="POST" class="max-w-4xl mx-auto">
+
+            <!-- SECTION 1 — Basic Information -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">1</div>
+                    Basic Information
+                </h3>
+                <p class="section-description">Let's start with the essentials to get to know you and your business.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                        <label for="full_name">Full Name *</label>
+                        <input type="text" id="full_name" name="full_name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="company_name">Company Name *</label>
+                        <input type="text" id="company_name" name="company_name" required placeholder="Acme Corporation">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@acmecorp.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://acmecorp.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="country_timezone">Country / Timezone</label>
+                        <input type="text" id="country_timezone" name="country_timezone" placeholder="United States (EST)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2 — Business Information -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">2</div>
+                    Business Overview
+                </h3>
+                <p class="section-description">Help us understand what your business does and how it operates.</p>
+                <div class="form-group">
+                    <label for="business_description">What does your business do? (Short description) *</label>
+                    <textarea id="business_description" name="business_description" rows="4" required placeholder="We provide marketing services to small businesses, helping them grow their online presence through social media management and content creation."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="services_products">What services or products do you offer?</label>
+                    <textarea id="services_products" name="services_products" rows="3" placeholder="List your main services or products that customers purchase from you."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="typical_customers">Who are your typical customers?</label>
+                    <textarea id="typical_customers" name="typical_customers" rows="3" placeholder="Describe your ideal customer - age, industry, company size, etc."></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                        <label for="employees">How many employees do you have?</label>
+                        <select id="employees" name="employees">
+                            <option value="">Select...</option>
+                            <option value="1-5">1-5 employees</option>
+                            <option value="6-10">6-10 employees</option>
+                            <option value="11-25">11-25 employees</option>
+                            <option value="26-50">26-50 employees</option>
+                            <option value="51+">51+ employees</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiries_per_day">How many customer inquiries do you receive per day?</label>
+                        <select id="inquiries_per_day" name="inquiries_per_day">
+                            <option value="">Select...</option>
+                            <option value="0-10">0–10 inquiries</option>
+                            <option value="10-30">10–30 inquiries</option>
+                            <option value="30-60">30–60 inquiries</option>
+                            <option value="60+">60+ inquiries</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3 — Communication & Calls -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">3</div>
+                    Customer Communication
+                </h3>
+                <p class="section-description">Tell us about how customers interact with your business and your current communication patterns.</p>
+                <div class="form-group">
+                    <label>Do customers call your business?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="customers_call" value="yes"> Yes, regularly</label>
+                        <label><input type="radio" name="customers_call" value="no"> No, rarely or never</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="calls_per_day">Approximately how many calls do you receive per day?</label>
+                    <input type="number" id="calls_per_day" name="calls_per_day" placeholder="e.g., 25" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="call_reasons">What are the most common reasons customers call? (Optional)</label>
+                    <textarea id="call_reasons" name="call_reasons" rows="3" placeholder="e.g., Inquiries about services, booking appointments, support questions, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you miss calls?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="miss_calls" value="often"> Often (more than 20%)</label>
+                        <label><input type="radio" name="miss_calls" value="sometimes"> Sometimes (5-20%)</label>
+                        <label><input type="radio" name="miss_calls" value="rarely"> Rarely (less than 5%)</label>
+                        <label><input type="radio" name="miss_calls" value="never"> Never</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you need calls handled after business hours?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="after_hours" value="yes"> Yes, we get calls outside business hours</label>
+                        <label><input type="radio" name="after_hours" value="no"> No, we don't need after-hours support</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do customers book appointments over the phone?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="book_phone" value="yes"> Yes, phone bookings are common</label>
+                        <label><input type="radio" name="book_phone" value="no"> No, bookings happen differently</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want an AI agent to answer calls?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ai_answer_calls" value="yes"> Yes, interested in AI call answering</label>
+                        <label><input type="radio" name="ai_answer_calls" value="no"> No, prefer human answering</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want an AI agent to call leads?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ai_call_leads" value="yes"> Yes, interested in AI outbound calling</label>
+                        <label><input type="radio" name="ai_call_leads" value="no"> No, prefer human outbound calls</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4 — Sales & Leads -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">4</div>
+                    Sales Process
+                </h3>
+                <p class="section-description">Help us understand how you generate and manage leads, and your sales workflow.</p>
+                <div class="form-group">
+                    <label>How do you currently get leads?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="lead_sources" value="ads"> Paid ads (Google, Facebook, etc.)</label>
+                        <label><input type="checkbox" name="lead_sources" value="website"> Website inquiries</label>
+                        <label><input type="checkbox" name="lead_sources" value="social_media"> Social media</label>
+                        <label><input type="checkbox" name="lead_sources" value="referrals"> Referrals</label>
+                        <label><input type="checkbox" name="lead_sources" value="other"> Other sources</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="after_lead">What happens after someone becomes a lead?</label>
+                    <textarea id="after_lead" name="after_lead" rows="3" placeholder="Describe your lead follow-up process - emails, calls, meetings, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you follow up with leads?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="follow_up" value="yes"> Yes, we have a follow-up process</label>
+                        <label><input type="radio" name="follow_up" value="no"> No, follow-up is inconsistent</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>How do you follow up?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="follow_up_methods" value="phone"> Phone calls</label>
+                        <label><input type="checkbox" name="follow_up_methods" value="email"> Email sequences</label>
+                        <label><input type="checkbox" name="follow_up_methods" value="sms"> SMS/Text messages</label>
+                        <label><input type="checkbox" name="follow_up_methods" value="whatsapp"> WhatsApp</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want AI to qualify leads before a human talks to them?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ai_qualify_leads" value="yes"> Yes, AI lead qualification would help</label>
+                        <label><input type="radio" name="ai_qualify_leads" value="no"> No, prefer human qualification</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want AI to automatically follow up with leads?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ai_follow_up" value="yes"> Yes, automated follow-up would be valuable</label>
+                        <label><input type="radio" name="ai_follow_up" value="no"> No, prefer manual follow-up</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5 — Booking & Scheduling -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">5</div>
+                    Appointments & Scheduling
+                </h3>
+                <p class="section-description">Tell us about your appointment booking process and scheduling needs.</p>
+                <div class="form-group">
+                    <label>Do you book appointments or consultations?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="book_appointments" value="yes"> Yes, appointment booking is part of our business</label>
+                        <label><input type="radio" name="book_appointments" value="no"> No, we don't book appointments</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>How do customers book appointments?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="booking_methods" value="phone"> Phone calls</label>
+                        <label><input type="checkbox" name="booking_methods" value="website"> Online booking system</label>
+                        <label><input type="checkbox" name="booking_methods" value="whatsapp"> WhatsApp</label>
+                        <label><input type="checkbox" name="booking_methods" value="email"> Email</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you use a calendar system?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="calendar_system" value="google"> Google Calendar</label>
+                        <label><input type="radio" name="calendar_system" value="outlook"> Outlook Calendar</label>
+                        <label><input type="radio" name="calendar_system" value="calendly"> Calendly</label>
+                        <label><input type="radio" name="calendar_system" value="other"> Other calendar system</label>
+                        <label><input type="radio" name="calendar_system" value="none"> No calendar system</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want AI to handle:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="ai_scheduling" value="book"> Appointment booking</label>
+                        <label><input type="checkbox" name="ai_scheduling" value="reschedule"> Rescheduling appointments</label>
+                        <label><input type="checkbox" name="ai_scheduling" value="reminders"> Sending reminders</label>
+                        <label><input type="checkbox" name="ai_scheduling" value="cancel"> Cancellation handling</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6 — Operations & Workflows -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">6</div>
+                    Business Operations
+                </h3>
+                <p class="section-description">Help us identify repetitive tasks and internal processes that could be automated.</p>
+                <div class="form-group">
+                    <label for="repetitive_tasks">What repetitive tasks does your team do every day?</label>
+                    <textarea id="repetitive_tasks" name="repetitive_tasks" rows="4" placeholder="e.g., Sending follow-up emails, updating spreadsheets, data entry, social media posting, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="time_consuming_tasks">What tasks take the most time?</label>
+                    <textarea id="time_consuming_tasks" name="time_consuming_tasks" rows="4" placeholder="Describe the tasks that consume the most hours of your team's day."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you have internal processes that involve:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="internal_processes" value="data_moving"> Moving data between systems</label>
+                        <label><input type="checkbox" name="internal_processes" value="emails"> Sending emails or notifications</label>
+                        <label><input type="checkbox" name="internal_processes" value="reports"> Creating reports</label>
+                        <label><input type="checkbox" name="internal_processes" value="crm_updates"> Updating CRM records</label>
+                        <label><input type="checkbox" name="internal_processes" value="task_assignment"> Assigning tasks to team members</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you want to automate internal workflows?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="automate_workflows" value="yes"> Yes, we'd like to automate internal processes</label>
+                        <label><input type="radio" name="automate_workflows" value="no"> No, we're focused on customer-facing automation</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7 — Tools & Systems -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">7</div>
+                    Current Tools
+                </h3>
+                <p class="section-description">Tell us about the software and tools your business currently uses. This helps us plan integrations.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                        <label for="crm">CRM System</label>
+                        <input type="text" id="crm" name="crm" placeholder="e.g., Salesforce, HubSpot, Pipedrive, Zoho">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking_system">Booking/Appointment System</label>
+                        <input type="text" id="booking_system" name="booking_system" placeholder="e.g., Calendly, Acuity, Bookwhen">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_platform">Email Platform</label>
+                        <input type="text" id="email_platform" name="email_platform" placeholder="e.g., Gmail, Outlook, SendGrid, Mailchimp">
+                    </div>
+                    <div class="form-group">
+                        <label for="sms_platform">SMS/Text Platform</label>
+                        <input type="text" id="sms_platform" name="sms_platform" placeholder="e.g., Twilio, MessageBird, SimpleTexting">
+                    </div>
+                    <div class="form-group">
+                        <label for="project_management">Project Management Tool</label>
+                        <input type="text" id="project_management" name="project_management" placeholder="e.g., Trello, Asana, ClickUp, Monday.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="other_tools">Other tools your business uses</label>
+                    <textarea id="other_tools" name="other_tools" rows="3" placeholder="List any other software, apps, or tools your team uses regularly."></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 8 — AI & Automation Goals -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">8</div>
+                    Automation Goals
+                </h3>
+                <p class="section-description">Tell us what you want to achieve with automation and which AI capabilities interest you most.</p>
+                <div class="form-group">
+                    <label for="automate_first">What do you want to automate first?</label>
+                    <textarea id="automate_first" name="automate_first" rows="3" placeholder="e.g., Customer inquiries, appointment booking, lead follow-up, etc."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="save_time">What would save your team the most time?</label>
+                    <textarea id="save_time" name="save_time" rows="3" placeholder="Describe the biggest time-wasters in your current workflow."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="increase_revenue">What would increase your revenue the most?</label>
+                    <textarea id="increase_revenue" name="increase_revenue" rows="3" placeholder="How could automation help you generate more sales or improve conversion rates?"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Are you interested in:</label>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="ai_interests" value="voice_agent"> AI Voice Agent</label>
+                        <label><input type="checkbox" name="ai_interests" value="sales_agent"> AI Sales Agent</label>
+                        <label><input type="checkbox" name="ai_interests" value="support_agent"> AI Support Agent</label>
+                        <label><input type="checkbox" name="ai_interests" value="content_agent"> AI Content Agent</label>
+                        <label><input type="checkbox" name="ai_interests" value="social_media_agent"> AI Social Media Agent</label>
+                        <label><input type="checkbox" name="ai_interests" value="internal_assistant"> AI Internal Assistant</label>
+                        <label><input type="checkbox" name="ai_interests" value="custom_agent"> Custom AI Agent</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ai_description">Describe what you want the AI to do.</label>
+                    <textarea id="ai_description" name="ai_description" rows="4" placeholder="Provide more details about how you envision AI helping your business."></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 9 — Technical & Volume -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">9</div>
+                    Usage Estimation
+                </h3>
+                <p class="section-description">Help us estimate your automation needs and technical requirements.</p>
+                <div class="form-group">
+                    <label for="estimated_calls">Estimated calls per day:</label>
+                    <input type="number" id="estimated_calls" name="estimated_calls" placeholder="e.g., 25" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Average call duration:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="call_duration" value="1-3"> 1–3 minutes</label>
+                        <label><input type="radio" name="call_duration" value="3-5"> 3–5 minutes</label>
+                        <label><input type="radio" name="call_duration" value="5-10"> 5–10 minutes</label>
+                        <label><input type="radio" name="call_duration" value="10+"> 10+ minutes</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you need inbound calls, outbound calls, or both?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="call_type" value="inbound"> Inbound calls only</label>
+                        <label><input type="radio" name="call_type" value="outbound"> Outbound calls only</label>
+                        <label><input type="radio" name="call_type" value="both"> Both inbound and outbound</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you need SMS automation?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sms_automation" value="yes"> Yes, SMS messaging would be helpful</label>
+                        <label><input type="radio" name="sms_automation" value="no"> No, not needed</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you need email automation?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="email_automation" value="yes"> Yes, automated email sequences</label>
+                        <label><input type="radio" name="email_automation" value="no"> No, manual emails are sufficient</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you need CRM integration?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="crm_integration" value="yes"> Yes, integrate with our CRM</label>
+                        <label><input type="radio" name="crm_integration" value="no"> No, CRM integration not needed</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 10 — Budget & Timeline -->
+            <div class="form-section">
+                <h3>
+                    <div class="section-icon">10</div>
+                    Project Planning
+                </h3>
+                <p class="section-description">Let's discuss timing and budget to ensure the solution fits your business needs.</p>
+                <div class="form-group">
+                    <label>When do you want to start?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="start_timeline" value="immediately"> Immediately - ready to implement</label>
+                        <label><input type="radio" name="start_timeline" value="1_month"> Within 1 month</label>
+                        <label><input type="radio" name="start_timeline" value="3_months"> Within 3 months</label>
+                        <label><input type="radio" name="start_timeline" value="exploring"> Just exploring options</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Monthly budget for automation:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="budget" value="200-500"> $200–$500 per month</label>
+                        <label><input type="radio" name="budget" value="500-1000"> $500–$1000 per month</label>
+                        <label><input type="radio" name="budget" value="1000-3000"> $1000–$3000 per month</label>
+                        <label><input type="radio" name="budget" value="3000+"> $3000+ per month</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="additional_info">Anything else we should know?</label>
+                    <textarea id="additional_info" name="additional_info" rows="4" placeholder="Share any additional context, challenges, or requirements that would help us create the best automation plan for your business."></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <h3>Ready to Transform Your Business?</h3>
+                <p>Submit your assessment and we'll create a custom automation plan tailored to your needs.</p>
+                <button type="submit" class="bg-white text-[#37352f] px-12 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors">
+                    🚀 Submit Assessment
+                </button>
+            </div>
+
+            <!-- Thank You Message -->
+            <div class="bg-[#f1f1ef] p-8 rounded-2xl border border-[#e9e9e7] text-center max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-[#37352f]">Thank you for your submission.</h3>
+                <p class="text-[#787774] leading-relaxed">
+                    We will review your business workflow and prepare a proposed automation plan showing which AI agents and systems can be implemented in your business.
+                </p>
+                <div class="mt-6 text-sm text-[#a1a19f]">
+                    📧 You'll receive your custom plan within 2-3 business days
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        // Progress bar functionality
+        function updateProgress() {
+            const formSections = document.querySelectorAll('.form-section');
+            const progressFill = document.getElementById('progressFill');
+            let completedSections = 0;
+
+            formSections.forEach(section => {
+                const inputs = section.querySelectorAll('input, select, textarea');
+                const hasValue = Array.from(inputs).some(input => {
+                    if (input.type === 'radio' || input.type === 'checkbox') {
+                        return input.checked;
+                    }
+                    return input.value.trim() !== '';
+                });
+
+                if (hasValue) {
+                    completedSections++;
+                }
+            });
+
+            const progress = (completedSections / formSections.length) * 100;
+            progressFill.style.width = progress + '%';
+        }
+
+        // Add event listeners to all form inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', updateProgress);
+                input.addEventListener('change', updateProgress);
+            });
+
+            // Smooth scrolling for better UX
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#e9e9e7] py-12 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-[#37352f] rounded-sm flex items-center justify-center">
+                    <span class="text-white text-[10px] font-bold">A</span>
+                </div>
+                <span class="font-semibold text-sm">AUTOCONVEY</span>
+            </div>
+            <div class="text-sm text-[#a1a19f]">
+                © 2024 Autoconvey AI Automation.
+            </div>
+            <div class="flex gap-6 text-sm text-[#787774]">
+                <a href="#" class="hover:underline">Privacy</a>
+                <a href="#" class="hover:underline">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
