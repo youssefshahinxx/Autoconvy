@@ -10,211 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=voice_selection" />
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            color: #37352f;
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .notion-card {
-            border: 2px solid #f7f7f5;
-            transition: background-color 0.2s ease;
-        }
-
-        @media (max-width: 420px) {
-            #announcement-bar {
-                flex-wrap: wrap;
-                gap: 0.35rem;
-                justify-content: center;
-                text-align: center;
-                padding: 0.6rem 0.6rem;
-                font-size: 0.80rem;
-                line-height: 1.2;
-                transition: transform 0.25s ease, opacity 0.25s ease;
-            }
-
-            #announcement-bar.hide-announcement {
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            #announcement-bar .badge {
-                display: none !important;
-            }
-
-            #announcement-bar .bar-button {
-                display: none !important;
-            }
-
-
-            nav {
-                top: 2rem !important;
-                padding: 0.65rem 0.65rem;
-                transition: top 0.2s ease;
-            }
-
-            nav.announcement-hidden {
-                top: 0 !important;
-            }
-
-            
-
-            .mobile-nav {
-                display: none;
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 0.6rem;
-                background-color: rgba(255, 255, 255, 0.95);
-                border-top: 1px solid #e9e9e7;
-            }
-
-            .mobile-nav.open {
-                display: flex;
-            }
-
-            nav > .max-w-5xl {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.55rem;
-            }
-
-            nav > .max-w-5xl > div:first-child {
-                justify-content: space-between;
-            }
-
-            nav .hidden.md\:flex {
-                display: none !important;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 38px;
-                height: 38px;
-                color: #37352f;
-            }
-
-            .nav-toggle svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            nav button.book-demo {
-                width: 100%;
-            }
-        }
-
-        .notion-card:hover {
-            background-color: #f7f7f5;
-        }
-
-        .featured-card {
-            background-color: #f7f7f5;
-            border: 2px solid #37352f;
-        }
-
-        .btn-black {
-            background-color: #37352f;
-            color: white;
-            transition: opacity 0.2s;
-        }
-
-        .btn-black:hover {
-            opacity: 0.85;
-        }
-
-        section {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .step-number {
-            font-family: monospace;
-            color: #a1a19f;
-        }
-
-        .divider {
-            height: 1px;
-            background-color: #e9e9e7;
-            width: 100%;
-            margin: 40px 0;
-        }
-
-        /* Custom Table Styling */
-        .comparison-table {
-            border-collapse: separate;
-            border-spacing: 0;
-            width: 100%;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            border-bottom: 1px solid #e9e9e7;
-            padding: 12px 16px;
-            text-align: left;
-        }
-
-        .comparison-table th {
-            background-color: #f7f7f5;
-            font-weight: 600;
-            font-size: 0.875rem;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .sticky-col {
-            position: sticky;
-            left: 0;
-            background-color: white;
-            z-index: 10;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            border: 1px solid #e9e9e7;
-            border-radius: 8px;
-        }
-
-        .logo-placeholder {
-            opacity: 0.5;
-        }
-
-        .logo-placeholder:hover {
-            opacity: 0.8;
-        }
-
-        .bar-button {
-            margin-left: 20px;
-            padding: 0px 16px;
-            color: white;
-            border-radius: 4px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: background-color 0.2s ease;
-        }
-
-        .badge {
-            background: #37352f;
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            margin-right: 10px;
-        }
-
-
-    </style>
 </head>
 
 <body>
@@ -232,7 +30,7 @@
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <div class="px-0 mx-0">
-                    <img src="Untitled design (31).png" alt="Autoconvey Logo"
+                    <img src="assets/Untitled design (31).png" alt="Autoconvey Logo"
                         class="px-0 mx-0 w-[40px] py-2 pr-0 object-contain">
                 </div>
                 <span class="font-bold tracking-tight text-xl ml-6">Autoconvey</span>
@@ -859,44 +657,7 @@
             </div>
         </section>
 
-        <!-- Usage Costs Explanation -->
-        <section class="pb-8">
-            <h3 class="text-2xl font-bold mb-6">What “Usage Costs” Mean</h3>
-            <p class="text-[#787774] mb-8">To maintain complete transparency, we separate our service fees from the
-                underlying infrastructure costs. You pay exactly for what you consume.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="notion-card p-6 rounded-lg">
-                    <h4 class="font-bold mb-4 flex items-center gap-2">
-                        <span>📊</span> Usage Item
-                    </h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex justify-between">
-                            <span>Voice Minutes</span>
-                            <span class="font-medium">$0.14 / min</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span>Phone Number</span>
-                            <span class="font-medium">$2 / month</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span>Workflow Executions</span>
-                            <span class="font-medium">Based on n8n</span>
-                        </li>
-                        <li class="flex justify-between">
-                            <span>Hosting</span>
-                            <span class="font-medium">Small monthly fee</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-[#f1f1ef] p-6 rounded-lg text-sm text-[#787774]">
-                    <h4 class="font-bold text-[#37352f] mb-2 uppercase tracking-wider text-xs">Important Note</h4>
-                    <p>SMS and extra data usage are billed according to carrier rates. Concurrent calls are supported up
-                        to 20 lines by default; higher volume requirements can be scaled on demand.</p>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- Usage-Based Costs Section -->
         <section class="pt-0 pb-8">
             <div class="table-container">
@@ -949,6 +710,44 @@
             </div>
         </section>
 
+        <!-- Usage Costs Explanation -->
+        <section class="pb-8">
+            <h3 class="text-2xl font-bold mb-6">What “Usage Costs” Mean</h3>
+            <p class="text-[#787774] mb-8">To maintain complete transparency, we separate our service fees from the
+                underlying infrastructure costs. You pay exactly for what you consume.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="notion-card p-6 rounded-lg">
+                    <h4 class="font-bold mb-4 flex items-center gap-2">
+                        <span>📊</span> Usage Item
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between">
+                            <span>Voice Minutes</span>
+                            <span class="font-medium">Starts at $0.14 / min</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Phone Number</span>
+                            <span class="font-medium">$2 / month</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Workflow Executions</span>
+                            <span class="font-medium">Based on n8n</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Hosting</span>
+                            <span class="font-medium">Small monthly fee</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-[#f1f1ef] p-6 rounded-lg text-sm text-[#787774]">
+                    <h4 class="font-bold text-[#37352f] mb-2 uppercase tracking-wider text-xs">Important Note</h4>
+                    <p>SMS and extra data usage are billed according to carrier rates. Concurrent calls are supported up
+                        to 20 lines by default; higher volume requirements can be scaled on demand.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section class="mb-20 text-center bg-[#37352f] text-white rounded-3xl pt-8 pb-8">
             <h3 class="text-4xl font-bold mb-6">See How It Works for Your Business</h3>
@@ -981,63 +780,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-                const mobileNav = document.getElementById('mobile-nav');
-                if (mobileNav && mobileNav.classList.contains('open')) {
-                    mobileNav.classList.remove('open');
-                    document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        const announcementBar = document.getElementById('announcement-bar');
-        const nav = document.querySelector('nav');
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        let lastScrollTop = 0;
-
-        function updateScrollBehavior() {
-            if (window.innerWidth > 420) {
-                announcementBar.classList.remove('hide-announcement');
-                nav.classList.remove('announcement-hidden');
-                return;
-            }
-
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && scrollTop > 20) {
-                announcementBar.classList.add('hide-announcement');
-                nav.classList.add('announcement-hidden');
-            } else if (scrollTop < lastScrollTop) {
-                announcementBar.classList.remove('hide-announcement');
-                nav.classList.remove('announcement-hidden');
-            }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        }
-
-        window.addEventListener('scroll', updateScrollBehavior);
-        window.addEventListener('resize', updateScrollBehavior);
-
-        if (navToggle && mobileNav) {
-            navToggle.addEventListener('click', () => {
-                const isOpen = mobileNav.classList.toggle('open');
-                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-            });
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
