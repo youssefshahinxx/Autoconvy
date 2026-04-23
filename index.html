@@ -13,19 +13,22 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=voice_selection" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap">
+
 </head>
 
 <body>
 
     <!-- Announcement Bar -->
-    <div id="announcement-bar"
-        class="fixed top-0 left-0 right-0 bg-black text-white text-center flex items-center justify-center py-4 z-40 text-sm font-medium">
+    <!-- <div id="announcement-bar"
+        class="fixed top-0 left-0 right-0 bg-[#202020] hide-announcement text-white text-center flex items-center justify-center py-4 z-40 text-sm font-medium">
         <span class="badge">NEW</span>
-        <P>Operational AI Agents are here. Scale your workflow 10x.</P>
-        <a href="#demo" class="bar-button">Try out &rarr;</a>
-    </div>
+        <P>AI Agents are here. Scale your workflow 10x.</P>
+        <a href="#demo" class="bar-button ml-4">Try out &rarr;</a>
+    </div> -->
     <!-- Navigation -->
-    <nav class="sticky top-14 z-50 bg-white/80 backdrop-blur-md border-b border-[#e9e9e7] px-6 py-4">
+    <nav class="sticky z-50 bg-white/80 backdrop-blur-md border-b border-[#e9e9e7] px-6 py-4">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <div class="px-0 mx-0">
@@ -40,7 +43,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <div class="hidden md:flex gap-8 text-sm font-medium text-[#787774]">
-                    <a href="#about" class="hover:text-[#37352f]">About</a>
+                    <a href="#about" class="hover:text-[#37352f]">How It Works</a>
                     <a href="#how-it-works" class="hover:text-[#37352f]">Workflow</a>
                     <a href="#agents" class="hover:text-[#37352f]">Agents</a>
                     <a href="#pricing" class="hover:text-[#37352f]">Pricing</a>
@@ -52,8 +55,8 @@
                 <a href="business-automation-assessment.html">Book a Demo</a>
             </button>
         </div>
-        <div id="mobile-nav" class="mobile-nav md:hidden" aria-hidden="true">
-            <a href="#about" class="text-sm font-medium text-[#37352f]">About</a>
+        <div id="mobile-nav" class="mobile-nav md:hidden backdrop-blur-md" aria-hidden="true">
+            <a href="#about" class="text-sm font-medium text-[#37352f]">How It Works</a>
             <a href="#how-it-works" class="text-sm font-medium text-[#37352f]">Workflow</a>
             <a href="#agents" class="text-sm font-medium text-[#37352f]">Agents</a>
             <a href="#pricing" class="text-sm font-medium text-[#37352f]">Pricing</a>
@@ -63,12 +66,11 @@
 
     <!-- Hero Section -->
     <header class="pt-28 pb-8 px-6 max-w-4xl mx-auto text-center md:text-left">
-        <div class="inline-block px-3 py-1 mb-6 text-xs font-medium bg-[#f1f1ef] text-[#787774] rounded-full">
+        <div class="inline-block px-3 py-1 mb-6 text-xs font-medium bg-[#f7f7f5] text-[#787774] rounded-full">
             The Future of Operational AI
         </div>
         <h1 class=" gradient-text text-left text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-            We Build AI Agents That Work Inside Your Business
-        </h1>
+            We Build AI Agents That Work Inside Your Business</h1>
         <p class="text-xl text-left text-[#787774] mb-4 max-w-2xl">
             Autoconvey designs and manages AI agents that handle calls, qualify leads, automate workflows, and execute
             real operational tasks across your business.
@@ -84,7 +86,7 @@
     </header>
 
     <!-- Logo Section -->
-    <section class="py-12 border-y border-[#e9e9e7] bg-[#fcfcfc]">
+    <section class="py-12 border-y border-[#e9e9e7] bg-[#fafafa]">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <p class="text-sm font-medium text-[#a1a19f] mb-8 uppercase tracking-widest">One place to run your Work
             </p>
@@ -106,28 +108,32 @@
         <!-- What Autoconvey Is -->
         <section id="about">
             <h2 class="text-sm uppercase tracking-widest text-[#a1a19f] font-bold mb-4">The Concept</h2>
-            <h3 class="text-3xl font-bold mb-6">A New Era of Business Communication.</h3>
-            <div class="space-y-4 text-lg text-[#37352f]">
+            <h3 class="text-3xl font-bold mb-2">A New Era of Business Communication</h3>
+            <div class="space-y-4 text-lg text-[#787774]">
                 <p>Business landscape has evolved. AI voice agents can now conduct natural, human-quality conversations.
-                    They <span class="font-bold">understand</span>, <span class="font-bold">respond</span>, and <span
-                        class="font-bold">execute</span> real business actions intelligently.</p>
-                <p>So, We design, deploy, and manage AI agents that can communicate, make decisions, and execute
+                    They <span class="font-bold text-[#37352f] opacity-80">understand, respond, <span class="font-normal"> and</span> execute</span> real
+                    business actions intelligently.</p>
+                <p>So, We <span class="font-bold text-[#37352f] opacity-80">design, deploy, <span class="font-normal"> and</span> manage</span> AI agents
+                    that can communicate, make decisions, and execute
                     workflows across
-                    different parts of your operations. without more hiring staff costs or operational overhead.</p>
+                    different parts of your operations. without more hiring <span
+                        class="font-bold text-[#37352f] opacity-80">staff costs <span class="font-normal"> or</span> operational overhead.</span></p>
             </div>
 
             <!-- Feature Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                 <!-- Card 1: Natural Conversations -->
                 <div class="notion-card p-6 rounded-lg">
-                        <span class="material-symbols-outlined text-3xl mb-4 block text-[#37352f]">voice_selection</span>
+                    <span
+                        class="material-symbols-outlined text-3xl mb-4 block text-[#37352f] card-icon">voice_selection</span>
                     <h4 class="font-bold text-lg mb-4">Natural Conversations</h4>
                     <ul class="text-sm text-[#787774] mb-6 space-y-3">
                         <li class="flex gap-2"><span>•</span> Natural conversations that feel human</li>
                         <li class="flex gap-2"><span>•</span> Clear understanding of customer intent</li>
                         <li class="flex gap-2"><span>•</span> Real-time responses that adapt to every interaction</li>
                     </ul>
-                    <p class="text-sm font-bold italic text-[#37352f]">Every inquiry answered and resolved, with intelligent
+                    <p class="text-sm font-bold italic text-[#37352f]">Every inquiry answered and resolved, with
+                        intelligent
                         dialogue.</p>
                 </div>
 
@@ -157,7 +163,7 @@
                         business action.</p>
                 </div>
             </div>
-            
+
             <!-- Capabilities -->
             <div class="bg-[#37352f] mt-12 rounded-2xl p-8 border border-[#e9e9e7]">
                 <h3 class="text-3xl font-bold mb-8 text-white">What AI Agents Can Handle</h3>
@@ -218,13 +224,12 @@
             </div>
         </section>
 
-
         <div class="divider max-w-4xl mx-auto"></div>
 
         <!-- Process -->
         <section id="how-it-works">
             <h2 class="text-sm uppercase tracking-widest text-[#a1a19f] font-bold mb-4">The Process</h2>
-            <h3 class="text-3xl font-bold mb-10">How Autoconvey Works</h3>
+            <h3 class="text-4xl font-bold tracking-tight mb-4">The AI Integration Lifecycle</h3>
             <div class="space-y-12">
                 <div class="flex gap-6">
                     <span class="step-number text-2xl font-bold pt-1">01</span>
@@ -273,15 +278,14 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-[#f7f7f5] p-6 rounded-lg border border-[#e9e9e7] mt-12">
-                <p class="font-medium mb-2">We don’t provide a standalone product.</p>
-                <p class="text-[#787774]">Clients pay directly for system usage (voice, automation, infrastructure), and
+            <div class="mt-12 mb-0">
+                <p class="text-md text-[#a1a19f] mt-2 max-w-2xl italic">Pay directly for system usage (voice, automation, infrastructure), and
                     pay Autoconvey a
                     monthly fee to design, build, manage, and continuously improve the
                     systems.</p>
             </div>
         </section>
-
+ 
         <div class="divider max-w-4xl mx-auto"></div>
 
         <!-- What We Build -->
@@ -289,7 +293,8 @@
         <section id="agents">
             <h2 class="text-sm uppercase tracking-widest text-[#a1a19f] font-bold mb-4">The Network</h2>
             <h3 class="text-3xl font-bold mb-2">A Network of AI Agents</h3>
-            <p class="text-[#787774] mb-10">Specialized AI systems designed for specific business roles.</p>
+            <p class="text-lg text-[#787774] max-w-3xl mx-auto md:mx-0 mb-4">Specialized AI systems designed for
+                specific business roles.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- 1. Appointment Scheduling -->
@@ -395,17 +400,97 @@
 
                 <!-- Featured Custom Agent Card -->
                 <div
-                    class="featured-card md:col-span-2 p-8 rounded-lg flex flex-col md:flex-row items-center gap-8 shadow-sm">
+                    class="featured-card md:col-span-2 p-8 rounded-lg flex flex-col md:flex-row items-left gap-8 shadow-sm">
                     <span class="text-5xl">🚀</span>
-                    <div class="text-center md:text-left">
-                        <h4 class="font-bold text-xl mb-2">Custom AI Agents</h4>
-                        <p class="text-md text-[#37352f] mb-3">Built from the ground up for highly specific business
+                    <div class="text-left md:text-left">
+                        <h4 class="font-bold text-xl text-white mb-2">Custom AI Agents</h4>
+                        <p class="text-md mb-3 text-[#fafafa]">Built from the ground up for highly specific business
                             operations and complex roles that standard tools can't touch.</p>
                         <div
-                            class="inline-block px-3 py-1 bg-[#37352f] text-white text-xs font-bold rounded uppercase tracking-widest">
-                            Bespoke Architecture</div>
+                            class="inline-block px-3 py-1 bg-[#fafafa] text-[#37352f] text-xs font-bold rounded uppercase tracking-widest">
+                            Bespoke Architecture
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <div class="divider max-w-4xl mx-auto"></div>
+
+        <!-- Efficiency Advantage -->
+        <section id="efficiency-advantage">
+            <h2 class="text-sm uppercase tracking-widest text-[#a1a19f] font-bold mb-4">The Efficiency Advantage</h2>
+            <h3 class="text-4xl font-bold tracking-tight mb-4">Unified AI Operations</h3>
+            <p class="text-lg text-[#787774] max-w-3xl mx-auto md:mx-0 mb-4">Building a sophisticated AI system usually requires juggling multiple workstreams—<br>from backend architecture and API logic to strategic market positioning and continuous system tuning. 
+            </p>            
+            <h4 class="text-2xl font-bold mb-6">Consolidated Value vs. Traditional Development</h4>
+            <div class="table-container">
+                <table class="efficiency-table">
+                    <thead>
+                        <tr>
+                            <th>Focus Area</th>
+                            <th>The Traditional Path</th>
+                            <th>Our Managed Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Development</td>
+                            <td>High-cost backend & API builds</td>
+                            <td>Included (Production-ready architecture)</td>
+                        </tr>
+                        <tr>
+                            <td>Strategy</td>
+                            <td>Disconnected business logic</td>
+                            <td>Included (Systems built for your goals)</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Hourly technical troubleshooting</td>
+                            <td>Included (Daily/Weekly monitoring)</td>
+                        </tr>
+                        <tr>
+                            <td>Overhead</td>
+                            <td>Multiple tool & API subscriptions</td>
+                            <td>Zero (One payment, all tools covered)</td>
+                        </tr>
+                        <tr>
+                            <td>Setup</td>
+                            <td>Heavy upfront "implementation" fees</td>
+                            <td>$0 Setup Fee</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4 class="text-2xl font-bold mb-4 mt-12">Why Our Model Wins</h4>
+            <p class="text-lg text-[#787774] max-w-3xl mx-auto md:mx-0 mb-4">We consolidate these complex disciplines into one managed ecosystem, delivering a production-ready system for less than the cost of a single specialized contract.</p>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 bg-[#37352f] rounded-full mt-3 flex-shrink-0"></div>
+                    <div>
+                        <h5 class="font-bold text-lg mb-2">One Simple Invoice</h5>
+                        <p class="text-[#787774]">We manage the distribution of payments to all underlying tools, LLMs, and databases. You pay one price; we handle the infrastructure.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 bg-[#37352f] rounded-full mt-3 flex-shrink-0"></div>
+                    <div>
+                        <h5 class="font-bold text-lg mb-2">Continuous Evolution</h5>
+                        <p class="text-[#787774]">We don't just deploy. We continuously monitor and optimize your system based on real-world performance and your specific industry needs.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 bg-[#37352f] rounded-full mt-3 flex-shrink-0"></div>
+                    <div>
+                        <h5 class="font-bold text-lg mb-2">Immediate ROI</h5>
+                        <p class="text-[#787774]">At $240/month, you launch a fully functional inbound agent with CRM and booking automation—eliminating the friction of hiring and the pain of technical management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12">
+                <p class="text-md text-[#a1a19f] mt-4 italic">We handle the complexity. You handle the growth.</p>
             </div>
         </section>
 
@@ -428,6 +513,8 @@
                         <li>• Booking automation</li>
                         <li>• CRM integration</li>
                     </ul>
+                    <p class="text-sm text-[#37352f] mb-4"><strong>Best For:</strong> businesses looking to automate
+                        lead capture or basic FAQ handling.</p>
                     <button class="w-full py-2 border border-[#37352f] rounded-md hover:bg-[#f7f7f5] font-medium">Select
                         Plan</button>
                 </div>
@@ -443,6 +530,8 @@
                         <li>• Weekly optimization</li>
                         <li>• Priority support</li>
                     </ul>
+                    <p class="text-sm text-[#37352f] mb-4"><strong>Best For:</strong> Growing teams that proactively
+                        maintain high-performance.</p>
                     <button class="w-full py-2 btn-black rounded-md font-medium">Select Plan</button>
                 </div>
                 <!-- Enterprise -->
@@ -455,24 +544,27 @@
                         <li>• Dedicated support</li>
                         <li>• Custom architecture</li>
                     </ul>
+                    <p class="text-sm text-[#37352f] mb-4"><strong>Best For:</strong> Large organizations requiring a
+                        tailored AI infrastructure.</p>
                     <button
                         class="w-full py-2 border border-[#37352f] rounded-md hover:bg-[#f7f7f5] font-medium">Contact
                         Us</button>
                 </div>
             </div>
             <div class="mt-8 max-w-2xl mr-auto flex gap-1">
-                <span class="text-[#37352f] mb-2 block">*</span>
+                <span class="text-[#37352f] block">*</span>
                 <div>
-                <p class="text-sm text-[#37352f] block">Pricing is based on the monthly service fee for
-                    maintaining the AI agents and systems we build.<br> There is also a one-time setup fee for the initial
-                design and deployment of the system, which varies based on complexity.</p>
+                    <p class="text-sm text-[#37352f] block">Our pricing consists of a fixed <strong>monthly service fee</strong> for system maintenance, plus <strong>usage-based credits</strong> for call minutes and workflow execution. Credit costs scale according to the complexity of the tasks performed. </p>
+                    <p class="text-md text-[#a1a19f] mt-4 italic">
+                No setup fees. No lock-ins. Cancellation allowed at any time.
+            </p>
                 </div>
             </div>
         </section>
 
         <!-- Plan Comparison Table Section -->
-        <section class="pt-8 pb-0">
-            <h3 class="text-xl font-bold mb-8">Full Plan Comparison</h3>
+        <section class="pt-4 pb-0">
+            <h3 class="text-xl font-bold mb-2">Full Plan Comparison</h3>
             <div class="table-container">
                 <table class="comparison-table">
                     <thead>
@@ -491,9 +583,9 @@
                             <td>From $1000</td>
                         </tr>
                         <tr>
-                            <td class="sticky-col font-medium">Setup Fee</td>
-                            <td>$300–$500</td>
-                            <td>$700–$1200</td>
+                            <td class="sticky-col font-medium">Estimated Usage</td>
+                            <td>$300–$500 / month</td>
+                            <td>$700–$1200 / month</td>
                             <td>Custom</td>
                         </tr>
                         <tr>
@@ -563,6 +655,12 @@
                             <td>✔</td>
                         </tr>
                         <tr>
+                            <td class="sticky-col font-medium">Real-time personalization</td>
+                            <td>—</td>
+                            <td>✔</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
                             <td class="sticky-col font-medium">MCP</td>
                             <td>—</td>
                             <td>Limited</td>
@@ -610,9 +708,9 @@
         </section>
 
 
-       <!-- Add-Ons List -->
+        <!-- Add-Ons List -->
         <section class="pt-8 pb-8">
-            <div class="bg-[#f7f7f5] rounded-2xl p-8 border border-[#e9e9e7]">
+            <div class="bg-[#37352f] text-white rounded-2xl p-8 border border-[#e9e9e7]">
                 <h3 class="text-xl font-bold mb-6">Available Add-Ons</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 text-sm">
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
@@ -620,24 +718,24 @@
                         <span class="font-semibold">$80 / month</span>
                     </div>
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
+                        <span>Conversation Redesign</span>
+                        <span class="font-semibold">$100 – $300</span>
+                    </div>
+                    <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
                         <span>New Workflow</span>
-                        <span class="font-semibold">$150 / month</span>
+                        <span class="font-semibold">$150 +</span>
                     </div>
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
                         <span>Additional Integration</span>
                         <span class="font-semibold">$50</span>
                     </div>
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
-                        <span>Conversation Redesign</span>
-                        <span class="font-semibold">$100 – $300</span>
-                    </div>
-                    <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
                         <span>CRM Pipeline Setup</span>
-                        <span class="font-semibold">$150+</span>
+                        <span class="font-semibold">$250 +</span>
                     </div>
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
                         <span>Custom Dashboard</span>
-                        <span class="font-semibold">$500+</span>
+                        <span class="font-semibold">$500 +</span>
                     </div>
                     <div class="flex justify-between border-b border-[#e9e9e7] pb-2">
                         <span>Phone Number Setup</span>
@@ -715,7 +813,7 @@
                     <ul class="space-y-3 text-sm">
                         <li class="flex justify-between">
                             <span>Voice Minutes</span>
-                            <span class="font-medium">Starts at $0.14 / min</span>
+                            <span class="font-medium">~ $0.14 / min</span>
                         </li>
                         <li class="flex justify-between">
                             <span>Phone Number</span>
@@ -731,8 +829,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="bg-[#f1f1ef] p-6 rounded-lg text-sm text-[#787774]">
-                    <h4 class="font-bold text-[#37352f] mb-2 uppercase tracking-wider text-xs">Important Note</h4>
+                <div class="bg-[#37352f] border p-6 rounded-lg text-sm text-[#a1a19f]">
+                    <h4 class="font-bold text-white mb-2 uppercase tracking-wider text-xs">Important Note</h4>
                     <p>SMS and extra data usage are billed according to carrier rates. Concurrent calls are supported up
                         to 20 lines by default; higher volume requirements can be scaled on demand.</p>
                 </div>
@@ -746,8 +844,12 @@
                 Move from manual processes to automated systems. Autoconvey builds AI agents that scale with your
                 demand.
             </p>
-            <button class="btn-black  px-10 py-4 rounded-md font-bold text-xl hover:opacity-90">
+            <button class="btn-black  px-10 py-4 rounded-md font-bold text-lg hover:opacity-90">
                 <a href="business-automation-assessment.html">Book a Demo</a>
+            </button>
+            <button
+                class="text-lg px-10 py-4 font-bold border border-[#e9e9e7] rounded-md hover:bg-[#f7f7f5] book-demo">
+                <a href="business-automation-assessment.html">Test Call</a>
             </button>
         </section>
 
@@ -772,6 +874,32 @@
         </div>
     </footer>
     <script src="index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tooltips = document.querySelectorAll('.tooltip');
+
+            tooltips.forEach(tooltip => {
+                const tooltipText = tooltip.querySelector('.tooltip-text');
+
+                tooltip.addEventListener('mouseenter', function (e) {
+                    const rect = tooltip.getBoundingClientRect();
+                    const tooltipRect = tooltipText.getBoundingClientRect();
+
+                    // Position tooltip above the icon
+                    tooltipText.style.left = (rect.left + rect.width / 2) + 'px';
+                    tooltipText.style.top = (rect.top - tooltipRect.height - 10) + 'px';
+
+                    // Ensure tooltip doesn't go off screen
+                    if (parseFloat(tooltipText.style.left) + tooltipRect.width / 2 > window.innerWidth) {
+                        tooltipText.style.left = (window.innerWidth - tooltipRect.width - 10) + 'px';
+                    }
+                    if (parseFloat(tooltipText.style.left) < 10) {
+                        tooltipText.style.left = '10px';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
