@@ -9,7 +9,7 @@ body {
 
 .notion-card {
     border: 2px solid #ececeb;
-    background: #fafafa;
+    /* background: #fafafa; */
 }
 
 .badge {
