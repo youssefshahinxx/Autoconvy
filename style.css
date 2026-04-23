@@ -8,8 +8,9 @@ body {
 }
 
 .notion-card {
-    border: 2px solid #ececeb;
+    border: 1px solid #ececeb;
     /* background: #fafafa; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .badge {
@@ -107,6 +108,8 @@ nav.announcement-hidden {
 
 .featured-card {
     background-color: #37352f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
     /* border: 2px solid #37352f; */
 }
 
