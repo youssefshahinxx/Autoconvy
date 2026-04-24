@@ -10,8 +10,8 @@ p {
 }
 
 .notion-card {
-    border: 1px solid #ececeb;
-    background: #f6f6f6;
+    border: 2px solid #ececeb;
+    /* background: #f6f6f6; */
     }
 
 .badge {
