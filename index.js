@@ -31,27 +31,27 @@ function updateNavVisibility() {
     }
 }
 
-function updateScrollBehavior() {
-    if (announcementBar) {
-        announcementBar.classList.remove('hide-announcement');
-    }
-    if (nav) {
-        nav.classList.remove('announcement-hidden');
-    }
+// function updateScrollBehavior() {
+//     if (announcementBar) {
+//         announcementBar.classList.remove('hide-announcement');
+//     }
+//     if (nav) {
+//         nav.classList.remove('announcement-hidden');
+//     }
 
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        if (announcementBar) {
-            announcementBar.classList.add('hide-announcement');
-        }
-        if (nav) {
-            nav.classList.add('announcement-hidden');
-        }
-    }
+//     if (scrollTop > lastScrollTop) {
+//         if (announcementBar) {
+//             announcementBar.classList.add('hide-announcement');
+//         }
+//         if (nav) {
+//             nav.classList.add('announcement-hidden');
+//         }
+//     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}
+//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+// }
 
 if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
