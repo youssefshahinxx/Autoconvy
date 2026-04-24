@@ -2,19 +2,20 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     color: #37352f;
     background-color: #ffffff;
-    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
-
+    /* background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%); */
     line-height: 1.6;
 }
 
-.notion-card {
-    border: 2px solid #ececeb;
-    /* background: #fafafa; */
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
+p {
 }
 
+.notion-card {
+    border: 1px solid #ececeb;
+    background: #f6f6f6;
+    }
+
 .badge {
-    background: #37352f;
+    background: #37352f;    
     color: white;
     font-size: 10px;
     font-weight: 800;
@@ -63,7 +64,6 @@ nav.announcement-hidden {
         display: none !important;
     }
 
-
     nav {
         padding: 0.65rem 0.65rem;
         transition: top 0.2s ease;
@@ -85,20 +85,6 @@ nav.announcement-hidden {
 
     nav .hidden.md\:flex {
         display: none !important;
-    }
-
-    .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        color: #37352f;
-    }
-
-    .nav-toggle svg {
-        width: 22px;
-        height: 22px;
     }
 
     nav button.book-demo {
@@ -475,42 +461,25 @@ nav {
     backdrop-filter: blur(10px);
 }
 
-.nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #e9e9e7;
-    border-radius: 8px;
-    background: white;
-    color: #37352f;
-    font-size: 1.25rem;
-    cursor: pointer;
+#nav-links {
+    transition: max-height 0.3s ease;
 }
 
-.mobile-nav {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.75rem;
-    background: inherit;
-    border-bottom: 1px solid rgba(233, 233, 231, 0.6);
-    backdrop-filter: blur(10px);
+@media (max-width: 767px) {
+    #nav-links {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    #nav-links.nav-open {
+        max-height: 500px;
+    }
 }
 
-.mobile-nav.open {
-    display: flex;
-}
-
-.mobile-nav a {
-    color: #37352f;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.65rem 0.75rem;
-    border-radius: 8px;
-    border: none;
-    background: transparent !important;
+#nav-links a {
+    padding: 0.75rem 0;
+    display: block;
+    text-align: center;
 }
 
 /* Better spacing for mobile form and sections */
@@ -570,11 +539,6 @@ nav {
     .radio-group,
     .checkbox-group {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .mobile-nav,
-    .nav-toggle {
-        display: none !important;
     }
 
     nav .hidden.md\:flex {
