@@ -10,9 +10,13 @@ p {
 }
 
 .notion-card {
-    border: 2px solid #ececeb;
-    /* background: #f6f6f6; */
+    border: 3px solid #ececeb;
+    background: #f7f7f5;
     }
+.notion-card:hover {
+    background: #f7f7f5 !important;
+    border: 3px solid #37352f !important;
+}
 
 .badge {
     background: #37352f;    
@@ -141,7 +145,7 @@ section {
 }
 
 .comparison-table th {
-    background-color: #f7f7f5;
+    background-color: #fafafa;
     color: #37352f;
     font-weight: 600;
     font-size: 0.95rem;
